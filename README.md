@@ -33,9 +33,16 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 ```
 
 ### Установка [Starship](https://github.com/starship/starship)
-Минимальная, невероятно быстрая и бесконечно настраиваемая подсказка для любой оболочки!
+    Минимальная, невероятно быстрая и бесконечно настраиваемая подсказка для любой оболочки!
 ```
 curl -sS https://starship.rs/install.sh | sh
+```
+
+### Конфигурационный файл zsh
+   Содержимое файла [.zshrc](https://github.com/ilgiz-ayupov/dotfiles/blob/main/.zshrc) необходимо скопировать и вставить по следующему пути:
+- #### Linux
+```
+~/.zshrc
 ```
 
 ### Установить zsh по умолчанию для терминала

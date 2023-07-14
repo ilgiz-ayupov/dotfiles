@@ -50,4 +50,16 @@ curl -sS https://starship.rs/install.sh | sh
 chsh -s $(which zsh)
 ```
 
-## Kitty
+## [Kitty](https://github.com/kovidgoyal/kitty)
+
+kitty — быстрый, многофункциональный, кроссплатформенный терминал на базе графического процессора
+
+### Установка kitty
+- #### Fedora
+```
+sudo dnf install kitty
+```
+- #### Ubuntu
+```
+sudo apt install kitty
+```

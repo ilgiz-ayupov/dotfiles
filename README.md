@@ -12,6 +12,10 @@ sudo dnf install zsh
 ```
 sudo apt install zsh
 ```
+- #### Arch Linux
+```
+sudo pacman -S zsh
+```
 
 ### Установка [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh)
 ```
@@ -51,7 +55,6 @@ chsh -s $(which zsh)
 ```
 
 ## [Kitty](https://github.com/kovidgoyal/kitty)
-
 kitty — быстрый, многофункциональный, кроссплатформенный терминал на базе графического процессора
 
 ### Установка kitty
@@ -62,4 +65,8 @@ sudo dnf install kitty
 - #### Ubuntu
 ```
 sudo apt install kitty
+```
+- #### Arch Linux
+```
+sudo pacman -S kitty
 ```

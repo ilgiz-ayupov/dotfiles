@@ -2,11 +2,29 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
+set fish_greeting
+
 # Aliases
 alias vim nvim
+alias dateiso "date +%FT%T%Z"
+
+alias cat bat
 
 alias push_obsidian="~/scripts/push_obsidian.sh"
 alias pull_obsidian="~/scripts/pull_obsidian.sh"
+
+# Abbreviations
+# Git
+abbr -a gs git status
+abbr -a ga git add
+abbr -a gaa git add .
+abbr -a gcm git commit -m
+abbr -a gco git checkout 
+abbr -a gp git push -u origin
+abbr -a gl git pull
+
+# Key bindings
+set -g fish_key_bindings fish_vi_key_bindings
 
 # Starship
 starship init fish | source

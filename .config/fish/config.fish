@@ -10,9 +10,9 @@ alias dateiso "date +%FT%T%Z"
 
 alias cat bat
 alias ls exa
+alias htop btm
 
-alias push_obsidian="~/scripts/push_obsidian.sh"
-alias pull_obsidian="~/scripts/pull_obsidian.sh"
+alias sync_obsidian="~/scripts/sync_obsidian.sh"
 
 # Abbreviations
 # Git

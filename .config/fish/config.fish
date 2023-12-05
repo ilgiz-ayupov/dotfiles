@@ -31,6 +31,13 @@ set -g fish_key_bindings fish_vi_key_bindings
 starship init fish | source
 
 # Golang
-set -gx PATH $PATH "/usr/local/go/bin"
-set -gx GOPATH "$HOME/go/src"
-set -gx GOBIN "$HOME/go/bin"
+set -gx GOROOT "/usr/local/go"
+set -gx GOPATH "$HOME/gocode"
+set -gx GOBIN "$HOME/gocode/bin"
+
+set -gx PATH $PATH "$GOROOT/bin"
+
+# Oracle
+set -gx ORACLE_HOME "/usr/lib/oracle/11.2/client64"
+set -gx PKG_CONFIG_PATH "$GOPATH/oci8"
+set -gx LD_LIBRARY_PATH "$ORACLE_HOME/lib"

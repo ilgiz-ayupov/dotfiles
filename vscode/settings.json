@@ -1,0 +1,252 @@
+{
+	// Security
+	"security.workspace.trust.untrustedFiles": "open",
+	"redhat.telemetry.enabled": false,
+
+	// Workbench
+	"workbench.colorTheme": "Ayu Mirage Bordered",
+	"workbench.iconTheme": "material-icon-theme",
+	"workbench.editor.closeOnFileDelete": true,
+	"workbench.editor.wrapTabs": true,
+
+	// Window
+	"window.openFilesInNewWindow": "on",
+	"window.dialogStyle": "custom",
+	"window.titleBarStyle": "custom",
+
+	// Files
+	"files.trimFinalNewlines": true,
+	"files.autoSave": "afterDelay",
+
+	// Explorer
+	"explorer.compactFolders": false,
+	"explorer.confirmDragAndDrop": false,
+	"explorer.confirmDelete": true,
+	"explorer.confirmPasteNative": true,
+	"explorer.confirmUndo": "verbose",
+	"workbench.list.openMode": "singleClick",
+	"workbench.startupEditor": "newUntitledFile",
+
+	// Editor
+	"editor.formatOnPaste": true,
+	"editor.formatOnSave": true,
+	"editor.minimap.size": "fill",
+	"editor.smoothScrolling": true,
+	"editor.detectIndentation": true,
+	"editor.insertSpaces": true,
+	"editor.suggestSelection": "first",
+	"editor.linkedEditing": true,
+	"editor.scrollbar.horizontal": "hidden",
+	"editor.quickSuggestionsDelay": 0,
+
+	// Fonts
+	"editor.fontFamily": "JetBrainsMono Nerd Font",
+	"editor.inlayHints.fontFamily": "PragmataPro",
+	"editor.fontWeight": "400",
+	"editor.fontSize": 14,
+	"editor.lineHeight": 20,
+
+	// Cursor
+	"editor.find.cursorMoveOnType": false,
+	"editor.scrollbar.vertical": "hidden",
+	"editor.cursorBlinking": "expand",
+	"editor.cursorSmoothCaretAnimation": "explicit",
+	"editor.multiCursorModifier": "alt",
+
+	// Terminal
+	"terminal.integrated.fontSize": 12,
+	"terminal.integrated.fontFamily": "'JetBrainsMono Nerd Font'",
+	"terminal.integrated.defaultProfile.linux": "fish",
+	"terminal.integrated.defaultProfile.windows": "Git Bash",
+
+	// Debug
+	"debug.toolBarLocation": "hidden",
+	"debug.focusEditorOnBreak": false,
+	"debug.showInlineBreakpointCandidates": false,
+	"debug.showBreakpointsInOverviewRuler": false,
+
+	// Golang
+	"go.toolsManagement.autoUpdate": true,
+	"go.lintTool": "golangci-lint",
+	"go.lintFlags": ["--fast"],
+	"go.lintOnSave": "package",
+
+	// Web
+	"typescript.tsserver.log": "off",
+	"typescript.updateImportsOnFileMove.enabled": "always",
+	"javascript.updateImportsOnFileMove.enabled": "always",
+	"typescript.preferences.quoteStyle": "double",
+	"javascript.preferences.quoteStyle": "double",
+	"typescript.format.semicolons": "remove",
+	"javascript.format.semicolons": "remove",
+	"typescript.autoClosingTags": true,
+	"javascript.autoClosingTags": true,
+	"html.autoClosingTags": true,
+
+	// Emmet
+	"emmet.includeLanguages": {
+		// javascript & typescript
+		"javascript": "javascriptreact",
+		"vue": "html"
+	},
+	"emmet.triggerExpansionOnTab": true,
+
+	// Prettier
+	"prettier.semi": false,
+	"prettier.arrowParens": "avoid",
+	"prettier.tabWidth": 4,
+	"prettier.useTabs": true,
+	"prettier.trailingComma": "none",
+	"prettier.singleQuote": false,
+	"prettier.jsxSingleQuote": false,
+
+	// Eslint
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "always"
+	},
+	"eslint.runtime": "",
+
+	// Git
+	"git.autofetch": true,
+	"git.enableSmartCommit": true,
+	"git.confirmSync": false,
+	"git.openRepositoryInParentFolders": "always",
+	"gitlens.currentLine.enabled": false,
+	"diffEditor.codeLens": true,
+	"diffEditor.ignoreTrimWhitespace": false,
+
+	// Formatters
+	"[go]": {
+		"editor.defaultFormatter": "golang.go"
+	},
+	"[proto3]": {
+		"editor.defaultFormatter": "xaver.clang-format"
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[vue]": {
+		"editor.defaultFormatter": "Vue.volar"
+	},
+	"[scss]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[dockerfile]": {
+		"editor.defaultFormatter": "ms-azuretools.vscode-docker"
+	},
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"clang-format.fallbackStyle": "google",
+	"window.zoomLevel": 1,
+
+	// CSpell
+	"cSpell.language": "en, ru",
+	"cSpell.ignoreWords": [
+		// модули
+		"usecase",
+		"bimport",
+		"rimport",
+		"uimport",
+		"gensql",
+		"datefunctions",
+		"oratype",
+		"genproxy",
+		"genroutine",
+		"logrus",
+		"sqlnull",
+		"logstruct",
+		"gomock",
+		"sqlx",
+
+		// функции/ методы
+		"errorln",
+		"infoln",
+		"debugln",
+		"beginx",
+
+		// объекты
+		"dblog",
+
+		// работа
+		"crmcustomerservice",
+		"crmretention",
+		"crmlastmile",
+		"abon",
+		"oper",
+		"tsor",
+		"sarkor",
+		"unlim",
+		"saldo",
+
+		// sql
+		"sysdate",
+
+		// frontend
+		"nuxt",
+		"axios",
+
+		// other
+		"ilgiz",
+		"микросервис",
+		"микросервиса"
+	],
+	"cSpell.enabledLanguageIds": [
+		"asciidoc",
+		"css",
+		"git-commit",
+		"go",
+		"html",
+		"typescript",
+		"typescriptreact",
+		"javascript",
+		"javascriptreact",
+		"json",
+		"markdown",
+		"pug",
+		"rust",
+		"scss",
+		"text",
+		"vue",
+		"yaml",
+		"yml"
+	],
+
+	// Colorize
+	"colorize.languages": [
+		"css",
+		"sass",
+		"scss",
+		"postcss",
+		"xml",
+		"svg",
+		"typescript",
+		"typescriptreact",
+		"javascript",
+		"javascriptreact"
+	],
+	"colorize.exclude": [
+		"**/.git",
+		"**/.svn",
+		"**/.hg",
+		"**/CVS",
+		"**/.DS_Store",
+		"**/.git",
+		"**/node_modules",
+		"**/bower_components",
+		"**/tmp",
+		"**/dist",
+		"**/tests"
+	]
+}
+

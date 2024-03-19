@@ -84,8 +84,12 @@ plugins=(
 	web-search
 	dirhistory
 	history
+
+	# git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 	zsh-autosuggestions
+	# git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 	zsh-syntax-highlighting
+
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -109,3 +113,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Aliases
 alias vim="nvim"
+
+# Starship shell prompt
+# curl -sS https://starship.rs/install.sh | sh
+eval "$(starship init zsh)"

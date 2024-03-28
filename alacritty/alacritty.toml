@@ -1,14 +1,16 @@
 [font]
-size=16.0
-normal = {family="JetBrainsMono Nerd Font", style="Medium"}
-bold = {family="JetBrainsMono Nerd Font", style="Bold"}
+size=14.0
+normal={family="JetBrainsMono Nerd Font", style="Medium"}
+bold={family="JetBrainsMono Nerd Font", style="Bold"}
 
 [window]
 padding={x=15, y=15}
-opacity=1
+opacity=1.0
+startup_mode="Maximized"
 
 [scrolling]
-history=100
+history=10000
+multiplier=5
 
 # Ayu Mirage Theme
 [colors.primary]

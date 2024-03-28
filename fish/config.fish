@@ -9,6 +9,14 @@ starship init fish | source
 set fish_greeting
 set -g fish_key_bindings fish_vi_key_bindings
 
+# Editor
+if command -v nvim > /dev/null
+	set -gx EDITOR "nvim"
+else 
+	set -gx EDITOR "vim"
+end
+
+
 # Aliases
 alias vim nvim
 alias dateiso "date +%FT%T%Z"

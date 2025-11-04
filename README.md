@@ -25,3 +25,28 @@ sudo reboot
 ```bash
 docker run hello-world
 ```
+
+## Oracle SQL Developer
+1. Скачать архив с [официального сайта](https://www.oracle.com/database/sqldeveloper/technologies/download/)
+2. Распакоровать архив
+```bash
+sudo unzip <zip_архив> -d /opt
+```
+3. Создание ярлыка
+Создать файл `/usr/share/applications/sqldeveloper.desktop` с следующим содержимым:
+```ini
+[Desktop Entry]
+Exec=/opt/sqldeveloper/sqldeveloper.sh %U
+Terminal=false
+StartupNotify=false
+Name=Oracle SQL Developer
+Icon=sqldeveloper
+Type=Application
+Categories=Development;Database;
+```
+4. Установить необходимую версию java:
+```bash
+sudo apt-get install java-17-openjdk
+```
+5. При запуске `Oracle SQL Developer` попросит указать путь к установленному JDK.
+Выбрать папку `/usr/lib/jvm/java-17-openjdk`

@@ -50,3 +50,24 @@ sudo apt-get install java-17-openjdk
 ```
 5. При запуске `Oracle SQL Developer` попросит указать путь к установленному JDK.
 Выбрать папку `/usr/lib/jvm/java-17-openjdk`
+
+## Postman
+1. Скачать архив с [официального сайта](https://www.postman.com/downloads/)
+2. Распаковать архив
+```bash
+sudo mkdir -p /opt/postman
+sudo tar -xzf <tar_архив> -C /opt/postman
+```
+3. Создание ярлыка
+Создать файл `/usr/share/applications/postman.desktop` с следующим содержимым:
+```ini
+[Desktop Entry]
+Name=Postman
+Exec=/opt/postman/Postman
+Comment=API Development Environment
+Icon=postman
+Terminal=false
+StartupNotify=false
+Type=Application
+Categories=Development;Utility;
+```

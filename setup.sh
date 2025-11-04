@@ -2,7 +2,7 @@
 
 # Установка необходимых пакетов
 echo "==== Установка пакетов ===="
-sudo epmi -y \
+sudo apt-get -y \
   gitk \
   htop \
   tree \
@@ -10,7 +10,8 @@ sudo epmi -y \
   alacritty \
   fish \
   starship \
-  tmux
+  tmux \
+  gcc
 
 echo "==== Перенос настроек ===="
 declare -A paths

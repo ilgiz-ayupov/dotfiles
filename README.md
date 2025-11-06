@@ -71,3 +71,8 @@ StartupNotify=false
 Type=Application
 Categories=Development;Utility;
 ```
+
+## KDE Connect
+```bash
+sudo apt-get install kdeconnect
+```

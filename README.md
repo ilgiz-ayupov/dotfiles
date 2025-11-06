@@ -72,6 +72,11 @@ Type=Application
 Categories=Development;Utility;
 ```
 
+## AyuGram Desktop
+```
+sudo apt-get install ayugram-desktop
+```
+
 ## KDE Connect
 ```bash
 sudo apt-get install kdeconnect

@@ -1,3 +1,36 @@
+## В самом начале...
+
+### Включаем sudo
+```bash
+su -
+```
+
+```bash
+control sudowheel enabled
+```
+
+```bash
+exit
+```
+
+### Обновление системы
+```bash
+sudo apt-get update && sudo apt-get dist-upgrade -y && sudo update-kernel && flatpak update -y && sudo apt-get clean
+```
+
+### Linux ядро
+
+#### Удаляем неиспользуемые ядра
+```bash
+sudo remove-old-kernels
+```
+
+или сразу всё ненужное
+```bash
+sudo remove-old-kernels -a
+```
+
+
 ## Приложения
 
 ### Docker 

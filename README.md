@@ -1,4 +1,6 @@
-## Docker 
+## Приложения
+
+### Docker 
 
 1. Установка необходимых пакетов:
 ```bash
@@ -26,7 +28,7 @@ sudo reboot
 docker run hello-world
 ```
 
-## Oracle SQL Developer
+### Oracle SQL Developer
 1. Скачать архив с [официального сайта](https://www.oracle.com/database/sqldeveloper/technologies/download/)
 2. Распакоровать архив
 ```bash
@@ -51,7 +53,7 @@ sudo apt-get install java-17-openjdk
 5. При запуске `Oracle SQL Developer` попросит указать путь к установленному JDK.
 Выбрать папку `/usr/lib/jvm/java-17-openjdk`
 
-## Postman
+### Postman
 1. Скачать архив с [официального сайта](https://www.postman.com/downloads/)
 2. Распаковать архив
 ```bash
@@ -72,7 +74,7 @@ Type=Application
 Categories=Development;Utility;
 ```
 
-## AyuGram Desktop
+### AyuGram Desktop
 ```
 sudo apt-get install ayugram-desktop
 ```

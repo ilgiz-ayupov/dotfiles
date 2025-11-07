@@ -30,6 +30,15 @@ sudo remove-old-kernels
 sudo remove-old-kernels -a
 ```
 
+### Flatpak
+
+```bash
+sudo apt-get update
+```
+
+```bash
+sudo apt-get install flatpak flatpak-repo-flathub
+```
 
 ## Приложения
 
@@ -107,12 +116,32 @@ Type=Application
 Categories=Development;Utility;
 ```
 
-### AyuGram Desktop
+### KDE Connect
+```bash
+sudo apt-get install kdeconnect
 ```
+
+### AyuGram Desktop
+```bash
 sudo apt-get install ayugram-desktop
 ```
 
-## KDE Connect
+### Telegram
 ```bash
-sudo apt-get install kdeconnect
+flatpak install flathub org.telegram.desktop
+```
+
+### Discord
+```bash
+flatpak install flathub com.discordapp.Discord
+```
+
+### OnlyOffice
+```bash
+flatpak install flathub org.onlyoffice.desktopeditors
+```
+
+### Flatseal
+```bash
+flatpak install flathub com.github.tchx84.Flatseal
 ```

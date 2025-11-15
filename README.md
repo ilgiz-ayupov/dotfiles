@@ -13,6 +13,12 @@ control sudowheel enabled
 exit
 ```
 
+### Fish
+```
+sudo nvim /etc/passwd
+```
+Поиск своего пользователя и замена `/bin/bash` на `/usr/bin/fish`
+
 ### Обновление системы
 ```bash
 sudo apt-get update && sudo apt-get dist-upgrade -y && sudo update-kernel && flatpak update -y && sudo apt-get clean
@@ -41,6 +47,11 @@ sudo apt-get install flatpak flatpak-repo-flathub
 ```
 
 ## Приложения
+
+### Alacritty
+```
+sudo apt-get install alacritty
+```
 
 ### Docker 
 

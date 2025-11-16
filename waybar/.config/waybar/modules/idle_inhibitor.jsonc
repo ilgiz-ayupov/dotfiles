@@ -1,0 +1,11 @@
+{
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "󰅶",
+            "deactivated": "󰾫"
+        },
+        "tooltip-format-activated": "Кофеин: активен\nРежим ожидания: отключен",
+        "tooltip-format-deactivated": "Кофеин: отключен\nРежим ожидания: активен"
+    }
+}

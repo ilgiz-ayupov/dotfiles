@@ -1,0 +1,235 @@
+{
+    "image#menu": {
+        "path": "/usr/share/pixmaps/ximperlinux.svg",
+        "size": 20,
+        "on-click": "pkill wofi || wofi --show drun -x 5 -y 10 --height 35% --width 20%"
+    },
+
+    "custom/clipboard": {
+		"tooltip": false,
+		"on-click": "pkill wofi || cliphist-wofi --location 3 -x -33 -y 10 --height 35% --width 25% | wl-copy",
+		"on-click-right": "rm -f ~/.cache/cliphist/db",
+		"format": ""
+	},
+
+    "hyprland/workspaces": {
+        "active-only": false,
+        "all-outputs": true,
+        "format": "{icon}",
+        "show-special": true,
+        "on-click": "activate",
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "format-icons": {
+            "default": "",
+        }
+    },
+
+    "hyprland/window": {
+    	"format": "{title}",
+    	"icon": "true"
+    },
+
+    "tray": {
+            "icon-size": 18,
+            "show-passive-items": true,
+            "spacing": 10
+   	},
+
+
+
+    "custom/media": {
+        "format": "{icon} {0}",
+        "return-type": "json",
+        "format-icons": {
+            "Playing": "",
+            "Paused": ""
+        },
+        "max-length": 50,
+        "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous"
+    },
+
+
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "󰅶",
+            "deactivated": "󰾫"
+        },
+        "tooltip-format-activated": "Кофеин: активен\nРежим ожидания: отключен",
+        "tooltip-format-deactivated": "Кофеин: отключен\nРежим ожидания: активен"
+    },
+
+    "hyprland/language": {
+            "format": "{}",
+            "format-en": "EN",
+            "format-ru": "RU",
+            "on-scroll-up": "hyprctl switchxkblayout all next",
+            "on-scroll-down": "hyprctl switchxkblayout all prev",
+    },
+
+    "hyprland/submap": {
+    	"format": "{}",
+    	"on-click": "hyprctl dispatch submap reset",
+    	"always-on": "true",
+    	"default-submap": "reset",
+    },
+
+    "pulseaudio#volume": {
+		"scroll-step": 5,
+    	"format": "{icon} {volume}%",
+    	"format-bluetooth": " {icon} {volume}%",
+        "format-muted": "  Мут",
+        "tooltip-format": "{desc}",
+        "format-icons": {
+            "headphone": " ",
+            "default": [
+                "",
+                "",
+                " "
+            ]
+    	},
+            "on-click": "pwvucontrol",
+            "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+	},
+     "pulseaudio#microphone": {
+        "format": "{format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": "  Мут",
+        "on-click": "pwvucontrol",
+        "on-click-right": "wpctl set-mute @DEFAULT_SOURCE@ toggle",
+        "on-scroll-up": "wpctl set-volume @DEFAULT_SOURCE@ 10%+ -l 1.0",
+		"on-scroll-down": "wpctl set-volume @DEFAULT_SOURCE@ 10%- -l 1.0",
+        "tooltip-format": "{source_desc}"
+    },
+
+    "group/volume": {
+    	"orientation": "horizontal",
+    	"modules": [
+    		"pulseaudio#volume",
+    		"pulseaudio#microphone",
+    	]
+    },
+
+	"network": {
+        "tooltip": true,
+        "format-wifi": "  {signalStrength}%",
+        "rotate": 0,
+        "format-ethernet": "󰈀  {signalStrength}%",
+        "format-linked": "󰈀 {ifname} (No IP)",
+        "format-disconnected": "󰖪 ",
+        "tooltip-format-disconnected": "Нет соединения",
+        "format-alt": "<span foreground='#90ceaa'>  {bandwidthDownBytes}</span> <span foreground='#dd6777'>   {bandwidthUpBytes}</span>",
+        "interval": 2,
+        "on-click-right": "kitty --class nmtui nmtui"
+    },
+
+	"bluetooth": {
+        "format": "",
+        "format-disabled": "󰂳",
+        "format-on": "󰂱",
+        "format-off": "󰂲",
+        "format-disconnected": "󰂲",
+        "format-connected": "󰂱 {num_connections}",
+        "tooltip": true,
+        "tooltip-format": "",
+        "tooltip-format-disabled": "󰂳 Отключено",
+        "tooltip-format-off": "󰂳 Выключено",
+        "tooltip-format-connected": "{device_enumerate}",
+        "tooltip-format-enumerate-connected": " {device_alias} 󰂄{device_battery_percentage}%",
+        "on-click-right": "blueman-manager"
+    },
+
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "rotate": 0,
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": [
+            "󰂎",
+            "󰁺",
+            "󰁻",
+            "󰁼",
+            "󰁽",
+            "󰁾",
+            "󰁿",
+            "󰂀",
+            "󰂁",
+            "󰂂",
+            "󰁹"
+        ]
+    },
+
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "on-scroll-up": "brightnessctl s +5%",
+        "on-scroll-down": "brightnessctl s 5%-"
+    },
+
+    "clock": {
+        "format": "{:%H:%M}",
+        "tooltip-format": "<tt><big>{calendar}</big></tt>",
+        "format-alt": "{:%Y-%m-%d}",
+        "calendar": {
+            "mode": "month",
+            "weeks-pos": "left",
+            "format": {
+                "months": "<span color='#d0d3d8'><b>{}</b></span>",
+                "days": "<span color='#cbced3'><b>{}</b></span>",
+                "weeks": "<span color='#95d3af'><b>W{}</b></span>",
+                "weekdays": "<span color='#98d3ee'><b>{}</b></span>",
+                "today": "<span color='#e26c7c'><b><u>{}</u></b></span>"
+            }
+        }
+    },
+
+    "custom/notification": {
+        "format": "{} {icon}",
+        "format-icons": {
+            "notification": " <span foreground='red'><sup></sup></span>",
+            "none": " ",
+            "dnd-notification": " <span foreground='red'><sup></sup></span>",
+            "dnd-none": " ",
+            "inhibited-notification": " <span foreground='red'><sup></sup></span>",
+            "inhibited-none": " ",
+            "dnd-inhibited-notification": " <span foreground='red'><sup></sup></span>",
+            "dnd-inhibited-none": " "
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    },
+
+    "group/notification": {
+        "orientation": "horizontal",
+        "modules": [
+        	"clock",
+        	"custom/notification",
+        ]
+    },
+}
+

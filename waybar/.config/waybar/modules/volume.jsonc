@@ -1,0 +1,37 @@
+{
+	"pulseaudio#volume": {
+		"scroll-step": 5,
+		"format": "{icon} {volume}%",
+		"format-bluetooth": " {icon} {volume}%",
+		"format-muted": "  Мут",
+		"tooltip-format": "{desc}",
+		"format-icons": {
+			"headphone": " ",
+			"default": [
+				"",
+				"",
+				" "
+			]
+		},
+		"on-click": "pwvucontrol",
+		"on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+	},
+	"pulseaudio#microphone": {
+		"format": "{format_source}",
+		"format-source": " {volume}%",
+		"format-source-muted": "  Мут",
+		"on-click": "pwvucontrol",
+		"on-click-right": "wpctl set-mute @DEFAULT_SOURCE@ toggle",
+		"on-scroll-up": "wpctl set-volume @DEFAULT_SOURCE@ 10%+ -l 1.0",
+		"on-scroll-down": "wpctl set-volume @DEFAULT_SOURCE@ 10%- -l 1.0",
+		"tooltip-format": "{source_desc}"
+	},
+
+	"group/volume": {
+		"orientation": "horizontal",
+		"modules": [
+			"pulseaudio#volume",
+			"pulseaudio#microphone"
+		]
+	}
+}

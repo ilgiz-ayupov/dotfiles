@@ -1,0 +1,10 @@
+{
+	"custom/launcher": {
+		"format": "Приложения",
+		"on-click": "pkill wofi || wofi --show drun -x 5 -y 10 --height 35% --width 20%",
+		"escape": true,
+		"tooltip": false,
+		"interval": 86400
+	}
+}
+

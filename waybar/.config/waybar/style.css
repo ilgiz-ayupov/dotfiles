@@ -1,0 +1,78 @@
+/*Цвета темы Gruvbox*/
+
+@define-color bg            #282828;
+@define-color selected_bg   #3c3836;
+@define-color fg            #ebdbb2;
+@define-color text          #ebdbb2;
+@define-color selected_text #fbf1c7;
+@define-color border        #665c54;
+@define-color error         #cc241d;
+@define-color success       #98971a;
+@define-color accent        #fabd2f;
+@define-color unfocused     #504945;
+
+* {
+	background: none;
+	border: none;
+	box-shadow: none;
+	text-shadow: none;
+	padding: 0;
+
+	font-family: "JetBrainsMono Nerd Font", monospace;
+	font-size: 14px;
+	min-width: 8px;
+}
+
+.modules-left {
+	margin-left: 10px;
+}
+.modules-right {
+	margin-right: 10px;
+}
+
+/* Отступы между модулями */
+.modules-left .module,
+.modules-right .module {
+	margin: 0 10px;
+}
+
+/* custom/launcher */
+#custom-launcher {
+	color: @text;
+}
+
+/* workspaces */
+#workspaces {
+	padding: 0 6px;
+	background: @bg;
+	border-radius: 10px;
+}
+#workspaces button {
+	color: @text;
+	padding: 4px 12px;
+	transition: 0.1s ease-in-out;
+}
+#workspaces button.active {
+	color: @accent;
+	font-weight: bold;
+}
+#workspaces button.urgent {
+	color: @error;
+	font-weight: bold;
+}
+
+/* custom-media */
+#custom-media {
+	padding: 0 10px;
+	border-radius: 15px;
+}
+#custom-media:hover {
+	background: @selected_bg;
+}
+#custom-media.Playing {
+	color: @success;
+}
+#custom-media.Paused {
+	color: @accent;
+}
+

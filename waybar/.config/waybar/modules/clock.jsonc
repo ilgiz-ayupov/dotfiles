@@ -1,0 +1,19 @@
+{
+	"clock": {
+		"format": "{:%H:%M:%s}",
+		"tooltip-format": "<tt><big>{calendar}</big></tt>",
+		"format-alt": "{:%Y-%m-%d}",
+		"calendar": {
+			"mode": "month",
+			"weeks-pos": "left",
+			"format": {
+				"months": "<span color='#d0d3d8'><b>{}</b></span>",
+				"days": "<span color='#cbced3'><b>{}</b></span>",
+				"weeks": "<span color='#95d3af'><b>W{}</b></span>",
+				"weekdays": "<span color='#98d3ee'><b>{}</b></span>",
+				"today": "<span color='#e26c7c'><b><u>{}</u></b></span>"
+			}
+		}
+	}
+}
+

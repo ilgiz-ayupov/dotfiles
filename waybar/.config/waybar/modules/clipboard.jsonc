@@ -1,0 +1,8 @@
+{
+	"custom/clipboard": {
+		"tooltip": false,
+		"on-click": "pkill wofi || cliphist-wofi --location 3 -x -33 -y 10 --height 35% --width 25% | wl-copy",
+		"on-click-right": "rm -f ~/.cache/cliphist/db",
+		"format": ""
+	}
+}

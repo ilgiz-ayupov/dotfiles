@@ -1,0 +1,38 @@
+{
+	"layer": "top",
+	"position": "top",
+	"height": 40,
+
+	"modules-left": [
+		"custom/launcher",
+		"hyprland/workspaces",
+		// "tray",
+		"hyprland/window"
+	],
+
+	"modules-center": [
+		"custom/media"
+	],
+
+	"modules-right": [
+		"idle_inhibitor",
+		"custom/clipboard",
+		"hyprland/language", 
+		"group/volume", 
+		"group/notification"
+	],
+
+	"include": [
+		"~/.config/waybar/modules/launcher.jsonc",
+ 		"~/.config/waybar/modules/workspaces.jsonc",
+		// "~/.config/waybar/modules/tray.jsonc",
+		"~/.config/waybar/modules/window.jsonc",
+		
+		"~/.config/waybar/modules/media.jsonc",
+
+		"~/.config/waybar/modules/idle_inhibitor.jsonc",
+		"~/.config/waybar/modules/clipboard.jsonc",
+		"~/.config/waybar/modules/volume.jsonc",
+		"~/.config/waybar/modules/notification.jsonc"
+	]
+}

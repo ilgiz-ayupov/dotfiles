@@ -14,13 +14,78 @@ alias dateiso "date +%FT%T%Z"
 
 # Functions
 function find_text
-	find . -type f -exec grep --color=auto -i -H "$argv" {} \;
+	if test (count $argv) -ne 1
+		echo "usage: find_text <text>" >&2
+		return 1
+	end
+
+	set text $argv[1]
+	find . -type f -exec grep --color=auto -i -H "$text" {} \;
+end
+
+function check_port
+	if test (count $argv) -ne 1
+		echo "usage: check_port <port>" >&2
+		return 1
+	end
+
+	set port $argv[1]
+	sudo lsof -i :$port
+end
+
+function http
+	if test (count $argv) -lt 2
+		echo "usage: http <GET|PORT> <url> [data]" >&2
+		return 1
+	end
+
+	set method (string upper $argv[1])
+	set url $argv[2]
+	set data ""
+
+	# временные файлы
+	set headers (mktemp)
+	set resp (mktemp)
+
+	# выполнить запрос
+	switch $method
+		case GET
+			curl -s -D $headers -o $resp -X GET $url
+		case POST
+			if test (count $argv) -lt 3
+				echo "POST requires data" >&2
+				return 1
+			end
+
+			set data $argv[3]
+			curl -s -D $headers -o $resp -X POST -d "$data" $url
+		case '*'
+			echo "unsupported method: $method" >&2
+			return 1
+	end
+
+	# вывод заголовков
+	echo -e "\n=== Headers ==="
+	bat --style=plain --language=ini $headers 2>/dev/null; or cat $headers
+
+	# вывод тела
+	echo -e "=== Body: ==="
+
+	# если JSON - подсветить через jq
+	if jq empty $resp 2>/dev/null
+		jq . $resp
+	else
+		bat --style=plain $resp 2>/dev/null; or cat $resp
+	end
+
+	# очистка
+	rm $headers $resp
 end
 
 # Golang
 set -gx GOROOT "/usr/local/go" 
-set -gx GOPATH "$HOME/gocode"
-set -gx GOBIN "$HOME/gocode/bin"
+set -gx GOPATH "$HOME/go"
+set -gx GOBIN "$HOME/go/bin"
 
 set -gx PATH $PATH "$GOROOT/bin"
 set -gx PATH $PATH $GOBIN
@@ -34,16 +99,12 @@ set -gx ORACLE_HOME /usr/lib/oracle/11.2/client64
 set -gx PKG_CONFIG_PATH $GOPATH/oci8
 set -gx LD_LIBRARY_PATH $ORACLE_HOME/lib
 
-# Git
-set -gx GIT_SK_UZ_TOKEN "104f4f7dbb68e84a7cafc40718b3d3bab73c29bc"
-set -gx GOPRIVATE "git.sk.uz"
+# Flatpak
+set -gx XDG_DATA_DIRS "/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share:$XDG_DATA_DIRS"
 
 # Protocol Buffer Compiler
 # Installation Guide: https://grpc.io/docs/protoc-installation/#install-pre-compiled-binaries-any-os
 set -gx PATH $PATH "$HOME/.local/bin"
-
-# Sarkor ROOT 
-set -gx SARKOR_ACCESS_ROOT "$HOME/sarkor"
 
 # Autorun
 # Автозапуск tmux, если не в сессии

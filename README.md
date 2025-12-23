@@ -18,8 +18,10 @@ exit
 sudo apt-get install -y \
     stow \
     git \
+    gitk \
     fish \
     tmux \
+    tree \
     neovim \
     xclip \
     firefox \

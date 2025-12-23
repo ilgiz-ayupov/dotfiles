@@ -1,18 +1,5 @@
 #!/bin/bash
 
-# Установка необходимых пакетов
-echo "==== Установка пакетов ===="
-sudo apt-get -y \
-  gitk \
-  htop \
-  tree \
-  stow \
-  alacritty \
-  fish \
-  starship \
-  tmux \
-  gcc
-
 echo "==== Перенос настроек ===="
 declare -A paths
 paths["alacritty"]="$HOME/.config/alacritty"

@@ -98,6 +98,11 @@ sudo apt-get install papirus-icon-theme
 sudo apt-get install gnome-extension-manager
 ```
 
+**Список расширений:**
+- Places Status Indicator
+- System Monitor
+- User Themes
+
 ## Приложения
 
 ### Alacritty
@@ -132,7 +137,7 @@ sudo systemctl enable containerd.service
 
 4. Перезагрузить компьютер
 ```bash
-sudo reboot
+sudo shutdown -r now
 ```
 
 5. Проверить результат

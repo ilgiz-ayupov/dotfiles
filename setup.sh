@@ -7,6 +7,7 @@ paths["bg"]="$HOME/.config/bg"
 paths["fish"]="$HOME/.config/fish"
 paths["fonts"]="$HOME/.fonts"
 paths["tmux"]="$HOME/.tmux.conf"
+paths["scripts"]="$HOME/Scripts"
 
 for row in "${!paths[@]}"; do
   echo "Перенос настроек для: $row"
@@ -20,7 +21,7 @@ read -p "Перезагрузить? [Y/n]: " answer
 answer=${answer:-y}
 if [[ "$answer" =~ ^[Yy]$ ]]; then
   echo "Перезагрузка..."
-  sudo reboot
+  sudo shutdown -r now
 else
   echo "Перезагрузка отклонена."
 fi

@@ -87,12 +87,15 @@ set -gx GOROOT "/usr/local/go"
 set -gx GOPATH "$HOME/go"
 set -gx GOBIN "$HOME/go/bin"
 
-set -gx PATH $PATH "$GOROOT/bin"
-set -gx PATH $PATH $GOBIN
+fish_add_path --append "$GOROOT/bin"
+fish_add_path --append $GOBIN
+
+# Scripts
+fish_add_path --append "$HOME/Scripts"
 
 # Java
 set -gx JAVA_HOME /usr/lib/jvm/java-23-openjdk/bin/java
-set -gx PATH $PATH $JAVA_HOME/bin
+fish_add_path --append $JAVA_HOME/bin
 
 # Oracle
 set -gx ORACLE_HOME /usr/lib/oracle/11.2/client64

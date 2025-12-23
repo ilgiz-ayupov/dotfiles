@@ -1,7 +1,7 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR Z_DATA_DIR:/home/junior/\x2elocal/share/z
-SETUVAR __fish_initialized:3400
+SETUVAR __fish_initialized:3800
 SETUVAR _fish_abbr_ga:git\x20add
 SETUVAR _fish_abbr_gaa:git\x20add\x20\x2e
 SETUVAR _fish_abbr_gcm:git\x20commit\x20\x2dm

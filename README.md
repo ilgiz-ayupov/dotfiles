@@ -207,15 +207,14 @@ sudo apt-get install java-17-openjdk
 1. Скачать архив с [официального сайта](https://www.postman.com/downloads/)
 2. Распаковать архив
 ```bash
-sudo mkdir -p /opt/postman
-sudo tar -xzf <tar_архив> -C /opt/postman
+sudo tar -xzf <tar_архив> -C /opt
 ```
 3. Создание ярлыка
 Создать файл `/usr/share/applications/postman.desktop` с следующим содержимым:
 ```ini
 [Desktop Entry]
 Name=Postman
-Exec=/opt/postman/Postman
+Exec=/opt/Postman/Postman
 Comment=API Development Environment
 Icon=postman
 Terminal=false

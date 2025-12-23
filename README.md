@@ -13,11 +13,34 @@ control sudowheel enabled
 exit
 ```
 
-### Fish
+### Базовые пакеты-утилиты
+```bash
+sudo apt-get install -y \
+    stow \
+    git \
+    fish \
+    tmux \
+    neovim \
+    xclip \
+    firefox \
+    chromium \
+    fastfetch \
+    eepm \
+    openssl \
+    gcc 
 ```
+
+### Fish
+
+```bash
 sudo nvim /etc/passwd
 ```
 Поиск своего пользователя и замена `/bin/bash` на `/usr/bin/fish`
+
+Установка starship:
+```bash
+curl -sS https://starship.rs/install.sh | sh
+```
 
 ### Обновление системы
 ```bash
@@ -36,6 +59,11 @@ sudo remove-old-kernels
 sudo remove-old-kernels -a
 ```
 
+### NVIDIA
+```bash
+sudo epm play switch-to-nvidia
+```
+
 ### Flatpak
 
 ```bash
@@ -46,11 +74,40 @@ sudo apt-get update
 sudo apt-get install flatpak flatpak-repo-flathub
 ```
 
+## Внешний вид
+
+### Gnome tweaks
+
+```bash
+sudo apt-get install gnome-tweaks
+```
+
+### Иконки Papirus
+
+```bash
+sudo apt-get install papirus-icon-theme
+```
+
+## Gnome расширения
+
+### Менеджер расширений
+
+```bash
+sudo apt-get install gnome-extension-manager
+```
+
 ## Приложения
 
 ### Alacritty
-```
+
+```bash
 sudo apt-get install alacritty
+```
+
+### VsCode
+
+```bash
+sudo epm play code
 ```
 
 ### Docker 
@@ -80,6 +137,39 @@ sudo reboot
 ```bash
 docker run hello-world
 ```
+
+### Golang
+1. Скачать архив с [официального сайта](https://go.dev/dl/)
+2. Удалить текущую версию
+
+```bash
+sudo rm -rf /usr/local/go
+```
+
+3. Распаковать архив
+
+```bash
+sudo tar -C /usr/local -xzf <targz_архив>
+```
+
+4. Добавить путь до Golang в PATH
+
+```bash
+export PATH=$PATH:/usr/local/go/bin
+```
+
+5. Проверить результат
+
+```bash
+go version
+```
+
+### Timeshift
+
+```bash
+sudo apt-get install timeshift
+```
+
 
 ### Oracle SQL Developer
 1. Скачать архив с [официального сайта](https://www.oracle.com/database/sqldeveloper/technologies/download/)
@@ -156,3 +246,4 @@ flatpak install flathub org.onlyoffice.desktopeditors
 ```bash
 flatpak install flathub com.github.tchx84.Flatseal
 ```
+

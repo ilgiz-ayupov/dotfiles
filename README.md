@@ -171,6 +171,28 @@ export PATH=$PATH:/usr/local/go/bin
 go version
 ```
 
+### Node.js
+1. Установить nvm
+
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+```
+
+**Установка node.js**
+```bash
+nvm install v18
+```
+
+**Переключение между версиями:**
+```bash
+nvm use v18
+```
+
+**Установить yarn:**
+```bash
+npm install -g yarn
+```
+
 ### Timeshift
 
 ```bash

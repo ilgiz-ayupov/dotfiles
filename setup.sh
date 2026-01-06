@@ -8,11 +8,16 @@ paths["fish"]="$HOME/.config/fish"
 paths["fonts"]="$HOME/.fonts"
 paths["tmux"]="$HOME/.tmux.conf"
 paths["scripts"]="$HOME/Scripts"
+paths["neovim"]="$HOME/.config/nvim"
 
 for row in "${!paths[@]}"; do
-  echo "Перенос настроек для: $row"
-  rm -rf "${paths[$row]}"
-  stow "$row"
+  read -p "Перенос настроек для: $row. Подтвердить? [Y/n]: " answer
+  answer=${answer:-y}
+
+  if [[ $answer =~ ^[Yy]$ ]]; then
+	  rm -rf "${paths[$row]}"
+	  stow "$row"
+  fi
 done
 
 echo "Выполнено!"

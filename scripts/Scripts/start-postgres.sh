@@ -1,23 +1,10 @@
 #!/bin/bash
 
-set -Eeuo pipefail
-# `-e` — выход при любой ошибке
-# `-u` — ошибка при использовании неинициализированной переменной
-# `-o pipefail` — ошибка в любом элементе пайпа
-# `-E` — ловит ошибки внутри функций и subshell
+source ./utils/strict_mode.sh
+source ./utils/trace.sh
+source ./utils/color_output.sh
 
-# ===== Colors =====
-RED="\033[0;31m"
-GREEN="\033[0;32m"
-BLUE="\033[0;34m"
-YELLOW="\033[1;33m"
-NC="\033[0m"
-
-# ===== Helpers =====
-info()    { echo -e "${BLUE}ℹ️  $1${NC}"; }
-success() { echo -e "${GREEN}✅ $1${NC}"; }
-warn()    { echo -e "${YELLOW}⚠️  $1${NC}"; }
-error()   { echo -e "${RED}❌ $1${NC}"; }
+export TRACE=0
 
 # ===== Config =====
 
@@ -36,13 +23,17 @@ volume="pgdata"
 container="postgres-db"
 
 # ===== Start =====
+info "запуск контейнера postgres: ${container}..."
+
+trace "проверить - установлен ли docker"
 if ! command -v docker >/dev/null 2>&1; then
 	error "docker не установлен"
 	exit 1
 fi
 
-info "запуск postgres контейнера..."
-if ! start_output=$(docker run --rm \
+trace "запустить контейнер"
+if ! out=$(
+	docker run --rm \
 	-d \
 	-e POSTGRES_USER=${user} \
 	-e POSTGRES_PASSWORD=${passwd} \
@@ -50,12 +41,12 @@ if ! start_output=$(docker run --rm \
 	-p ${port}:5432 \
 	-v ${volume}:/var/lib/postgresql/data \
 	--name ${container} \
-	${image} 2>&1); then
-
-	error "не удалось запустить postgres контейнер"
-	echo "$start_output"
+	${image} 2>&1
+); then
+	error "не удалось запустить контейнер:"
+	echo "$out"
 	exit 1
 fi
 
-success "postgres успешно запущен:"
+success "контейнер успешно запущен:"
 echo "${dns}"

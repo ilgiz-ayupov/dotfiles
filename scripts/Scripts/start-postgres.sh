@@ -1,8 +1,8 @@
 #!/bin/bash
 
-source ./utils/strict_mode.sh
-source ./utils/trace.sh
-source ./utils/color_output.sh
+source $HOME/Scripts/utils/strict_mode.sh
+source $HOME/Scripts/utils/trace.sh
+source $HOME/Scripts/utils/color_output.sh
 
 export TRACE=0
 

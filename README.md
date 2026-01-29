@@ -18,18 +18,20 @@ exit
 sudo apt-get install -y \
     stow \
     git \
-    gitk \
+    lazygit \
+    lazydocker \
     fish \
     tmux \
     tree \
     neovim \
     xclip \
+    ripgrep \
     firefox \
     chromium \
     fastfetch \
     eepm \
     openssl \
-    gcc 
+    gcc
 ```
 
 ### Fish
@@ -117,7 +119,7 @@ sudo apt-get install alacritty
 sudo epm play code
 ```
 
-### Docker 
+### Docker
 
 1. Установка необходимых пакетов:
 ```bash

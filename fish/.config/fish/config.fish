@@ -11,6 +11,11 @@ set -g fish_key_bindings fish_vi_key_bindings
 
 # Aliases
 alias dateiso "date +%FT%T%Z"
+alias up-apt "sudo apt-get update && sudo apt-get dist-upgrade -y"
+alias up-epm-play "flatpak update -y"
+alias up-flatpak "sudo epm play --update all -y"
+alias lz "lazygit"
+alias ld "lazydocker"
 
 # Functions
 function find_text
@@ -83,7 +88,7 @@ function http
 end
 
 # Golang
-set -gx GOROOT "/usr/local/go" 
+set -gx GOROOT "/usr/local/go"
 set -gx GOPATH "$HOME/go"
 set -gx GOBIN "$HOME/go/bin"
 
@@ -102,6 +107,11 @@ set -gx ORACLE_HOME /usr/lib/oracle/11.2/client64
 set -gx PKG_CONFIG_PATH $GOPATH/oci8
 set -gx LD_LIBRARY_PATH $ORACLE_HOME/lib
 
+# Sarkor
+set -gx GOPRIVATE "git.sk.uz"
+set -gx GIT_SK_UZ_TOKEN "b551bcef98459891eb8c586b92a89e0063f2efea"
+set -gx SARKOR_ACCESS_ROOT "$GOPATH/sarkor"
+
 # Flatpak
 set -gx XDG_DATA_DIRS "/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share:$XDG_DATA_DIRS"
 
@@ -109,12 +119,3 @@ set -gx XDG_DATA_DIRS "/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak
 # Installation Guide: https://grpc.io/docs/protoc-installation/#install-pre-compiled-binaries-any-os
 set -gx PATH $PATH "$HOME/.local/bin"
 
-# Autorun
-# Автозапуск tmux, если не в сессии
-if status is-interactive
-    # Проверяем, что мы не находимся уже внутри tmux
-    if not set -q TMUX
-        # Подключаемся к существующей сессии или создаем новую
-        tmux attach -t main || tmux new -s main
-    end
-end
